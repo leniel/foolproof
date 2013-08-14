@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foolproof", "Foolproof\Foolproof.csproj", "{46E69639-CB61-4DB0-AD4E-6515FDEFB6C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit Tests", "Unit Tests\Unit Tests.csproj", "{20A89A92-C121-4D61-8986-3234E6F1EF53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavaScript Unit Tests", "JavaScript Unit Tests\JavaScript Unit Tests.csproj", "{D1C22203-EAA9-4D12-8B39-07E9E597015F}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs02.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Foolproof\\Foolproof.csproj
+		SccProjectName1 = Foolproof
+		SccLocalPath1 = Foolproof
+		SccProjectUniqueName2 = Unit\u0020Tests\\Unit\u0020Tests.csproj
+		SccProjectName2 = Unit\u0020Tests
+		SccLocalPath2 = Unit\u0020Tests
+		SccProjectUniqueName3 = JavaScript\u0020Unit\u0020Tests\\JavaScript\u0020Unit\u0020Tests.csproj
+		SccProjectName3 = JavaScript\u0020Unit\u0020Tests
+		SccLocalPath3 = JavaScript\u0020Unit\u0020Tests
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46E69639-CB61-4DB0-AD4E-6515FDEFB6C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46E69639-CB61-4DB0-AD4E-6515FDEFB6C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46E69639-CB61-4DB0-AD4E-6515FDEFB6C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46E69639-CB61-4DB0-AD4E-6515FDEFB6C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20A89A92-C121-4D61-8986-3234E6F1EF53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20A89A92-C121-4D61-8986-3234E6F1EF53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20A89A92-C121-4D61-8986-3234E6F1EF53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20A89A92-C121-4D61-8986-3234E6F1EF53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1C22203-EAA9-4D12-8B39-07E9E597015F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1C22203-EAA9-4D12-8B39-07E9E597015F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1C22203-EAA9-4D12-8B39-07E9E597015F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1C22203-EAA9-4D12-8B39-07E9E597015F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
