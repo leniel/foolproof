@@ -23,19 +23,19 @@
             });
 
             test("GreaterThan Dates", function () {
-                ok(!$("#IsTests_GreaterThanDates_Value2").hasClass("input-validation-error"), "Valid Test");
+                ok(!$("#IsTests_GreaterThanDatesValid_Value2").hasClass("input-validation-error"), "Valid Test");
             });
 
             test("GreaterThan Decimals", function () {
-                ok(!$("#IsTests_GreaterThanDecimals_Value2").hasClass("input-validation-error"), "Valid Test");
+                ok(!$("#IsTests_GreaterThanDecimalValid_Value2").hasClass("input-validation-error"), "Valid Test");
             });
 
             test("GreaterThan Integers", function () {
-                ok(!$("#IsTests_GreaterThanInts_Value2").hasClass("input-validation-error"), "Valid Test");
+                ok(!$("#IsTests_GreaterThanIntValid_Value2").hasClass("input-validation-error"), "Valid Test");
             });
 
             test("LessThan Integers", function () {
-                ok(!$("#IsTests_LessThanInts_Value2").hasClass("input-validation-error"), "Valid Test");
+                ok(!$("#IsTests_LessThanIntValid_Value2").hasClass("input-validation-error"), "Valid Test");
             });
 
             module("IsWithPassNull");
