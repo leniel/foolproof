@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 using System.Web.Mvc;
@@ -21,11 +22,9 @@ namespace Foolproof
         if (Attribute is ContingentValidationAttribute)
         {
             ContingentValidationAttribute attribute = Attribute as ContingentValidationAttribute;
-
-            PropertyInfo otherPropertyInfo = this.Metadata.ContainerType.GetProperty(attribute.DependentProperty);
+            PropertyInfo otherPropertyInfo = GetPropertyBy(Metadata.ContainerType, attribute.DependentProperty);
 
             var displayName = GetMetaDataDisplayName(otherPropertyInfo);
-
             if (displayName != null)
             {
                 attribute.DependentPropertyDisplayName = displayName;
@@ -43,6 +42,20 @@ namespace Foolproof
             
         yield return result;
     }
+
+        private static PropertyInfo GetPropertyBy(Type containerType, string dependentProperty)
+        {
+            var dotLocation = dependentProperty.IndexOf('.');
+            if (dotLocation >= 0)
+            {
+                var propertyNameOnMe = dependentProperty.Substring(0, dotLocation);
+                var propertyNameOnTypeOfMyProperty = dependentProperty.Substring(dotLocation+1);
+
+                return GetPropertyBy(containerType.GetProperty(propertyNameOnMe).PropertyType, propertyNameOnTypeOfMyProperty);
+            }
+
+            return containerType.GetProperty(dependentProperty);
+        }
 
         private string GetAttributeDisplayName(PropertyInfo property)
         {
