@@ -30,7 +30,7 @@ namespace Foolproof
 
         public override string DefaultErrorMessage
         {
-            get { return "{0} is invalide due to {1}."; }
+            get { return "{0} is invalid due to {1}."; }
         }
 
         private object GetDependentPropertyValue(object container)
