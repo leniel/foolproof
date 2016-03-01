@@ -23,7 +23,10 @@ namespace Foolproof
             ContingentValidationAttribute attribute = Attribute as ContingentValidationAttribute;
 
             PropertyInfo otherPropertyInfo = this.Metadata.ContainerType.GetProperty(attribute.DependentProperty);
-
+            if(otherPropertyInfo == null)
+            {
+                throw new Exception(string.Format("Cannot find the dependent property {0}", attribute.DependentProperty));
+            }
             var displayName = GetMetaDataDisplayName(otherPropertyInfo);
 
             if (displayName != null)
