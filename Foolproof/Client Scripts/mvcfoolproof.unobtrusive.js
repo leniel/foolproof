@@ -96,10 +96,10 @@ foolproof.getName = function (element, dependentPropety) {
             if (dependentValue == null)
                 dependentValue = false
         }
-        else
+        else if (dependentPropertyElement.length)
             dependentValue = dependentPropertyElement[0].value;
 
-        if (foolproof.is(dependentValue, operator, dependentTestValue)) {
+        if (dependentValue && foolproof.is(dependentValue, operator, dependentTestValue)) {
             if (pattern == null) {
                 if (value != null && value.toString().replace(/^\s\s*/, '').replace(/\s\s*$/, '') != "")
                     return true;

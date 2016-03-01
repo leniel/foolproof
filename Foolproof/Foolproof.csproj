@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -68,7 +69,11 @@
     <Compile Include="RequiredIfFalse.cs" />
     <Compile Include="RequiredIfTrue.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Client Scripts\mvcfoolproof.unobtrusive.min.js.map">
+      <DependentUpon>mvcfoolproof.unobtrusive.min.js</DependentUpon>
+    </None>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Client Scripts\mvcfoolproof.unobtrusive.js" />
     <Content Include="Client Scripts\mvcfoolproof.unobtrusive.min.js" />
