@@ -31,7 +31,6 @@ namespace Foolproof
         {
             if (string.IsNullOrEmpty(ErrorMessageResourceName) && string.IsNullOrEmpty(ErrorMessage))
                 ErrorMessage = DefaultErrorMessage;
-            DependentValueDisplayName = GetDisplayName(DependentValue);
             return string.Format(ErrorMessageString, name, DependentPropertyDisplayName ?? DependentProperty, DependentValueDisplayName ?? DependentValue);
         }
 
@@ -65,16 +64,23 @@ namespace Foolproof
         public string GetDisplayName(object value)
         {
             Type type = value.GetType();
-            var members = (from member in type.GetMembers()
-                          from attribute in member.GetCustomAttributes(typeof(DisplayAttribute), true)
-                          select member).ToList();
-
-            if (members != null && members.Count >= 1)
+            if (type.IsEnum)
             {
-                object[] attributes = members[0].GetCustomAttributes(typeof(DisplayAttribute), false);
-                if (attributes != null && attributes.Length >= 1)
+                var members = (from member in type.GetMembers()
+                               from attribute in member.GetCustomAttributes(typeof(DisplayAttribute), true)
+                               select member).ToList();
+
+                if (members != null && members.Count >= 1)
                 {
-                    return ((DisplayAttribute)attributes[0]).Name;
+                    var member = members.FirstOrDefault(m => string.Equals(string.Format("{0}",m),string.Format("{0}",value), StringComparison.InvariantCultureIgnoreCase));
+                    if (member != null)
+                    {
+                        object[] attributes = member.GetCustomAttributes(typeof(DisplayAttribute), false);
+                        if (attributes != null && attributes.Length >= 1)
+                        {
+                            return ((DisplayAttribute)attributes[0]).Name;
+                        }
+                    }
                 }
             }
             return string.Format("{0}", value);
