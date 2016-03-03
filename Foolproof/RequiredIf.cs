@@ -72,7 +72,7 @@ namespace Foolproof
 
                 if (members != null && members.Count >= 1)
                 {
-                    var member = members.FirstOrDefault(m => string.Equals(string.Format("{0}",m),string.Format("{0}",value), StringComparison.InvariantCultureIgnoreCase));
+                    var member = members.FirstOrDefault(m => string.Equals(string.Format("{0}",m.Name),string.Format("{0}",value), StringComparison.InvariantCultureIgnoreCase));
                     if (member != null)
                     {
                         object[] attributes = member.GetCustomAttributes(typeof(DisplayAttribute), false);
