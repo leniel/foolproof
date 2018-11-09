@@ -1,6 +1,6 @@
 ﻿var foolproof = function () { };
 foolproof.is = function (value1, operator, value2, passOnNull) {
-    if (passOnNull) {
+    if (passOnNull === "true") {
         var isNullish = function (input) {
             return input == null || input == undefined || input == "";
         };
@@ -69,7 +69,7 @@ foolproof.getName = function (element, dependentPropety) {
     jQuery.validator.addMethod("is", function (value, element, params) {
         var dependentProperty = foolproof.getId(element, params["dependentproperty"]);
         var operator = params["operator"];
-        var passOnNull = params["passonnull"];
+        var passOnNull = String(params["passonnull"]).toLowerCase();
         var dependentValue = document.getElementById(dependentProperty).value;
 
         if (foolproof.is(value, operator, dependentValue, passOnNull))
