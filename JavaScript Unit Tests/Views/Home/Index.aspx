@@ -57,6 +57,11 @@
                 ok($("#RequiredTests_EqualToFalse_IsFalseNoValue_Value2").hasClass("input-validation-error"), "False, Invalid Test");
                 ok(!$("#RequiredTests_EqualToFalse_IsTrueNoValue_Value2").hasClass("input-validation-error"), "True, Valid Test");
             });
+
+            $("#sourceToggler").click(function () {
+                $("#sourcePanel").toggle();
+            });
+            
         });                    
     </script>
     <h1 id="qunit-header">
@@ -67,7 +72,9 @@
     </h2>
     <ol id="qunit-tests">
     </ol>
-    <div style="display: none;">
+    <hr/>
+    <a href="#" id="sourceToggler">view source</a>
+    <div style="display: none;" id="sourcePanel">
         <% Html.EnableClientValidation(); %>
         <% using (Html.BeginForm())
            { %>
