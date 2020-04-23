@@ -41,7 +41,16 @@ namespace Foolproof
             foreach (string propertyName in DependentProperty.Split('.'))
             {
                 var property = currentType.GetProperty(propertyName);
-                value = property.GetValue(value, null);
+
+                if (property.PropertyType.IsEnum)
+                {
+                    value = (int)property.GetValue(value, null);
+                }
+                else
+                {
+                    value = property.GetValue(value, null);
+                }
+
                 currentType = property.PropertyType;
             }
 
